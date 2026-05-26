@@ -16,5 +16,10 @@ class RideSharingServiceApp:
         if len(self.drivers)==0:
             print(f"No driver avaliable for {passenger.name}")
             return
-        
+        assignedDriver=None
+        minDistance=float("inf")
+        for driver in self.drivers:
+            currentDriverDistance=calcDistance(_____,______)
+            if minDistance
+            
         
