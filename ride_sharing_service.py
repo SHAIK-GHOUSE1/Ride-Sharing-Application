@@ -5,7 +5,7 @@ from location import Location
 from math import sqrt
 from vehicle import Vehicle
 class RideSharingServiceApp:
-    def __int__(self):
+    def __init__(self):
         self.drivers:List[Driver]=[]
         self.passengers:List[Passenger]=[]
     # Method to add a Driver
@@ -36,14 +36,21 @@ class RideSharingServiceApp:
         assignedDriver=None
         minDistance=float("inf")
         for driver in self.drivers:
+            if driver.status=="Assigned":
+                continue
+
             currentDriverDistance=self.__calcDistance(passenger.location,driver.location)
             if currentDriverDistance<minDistance:
                 minDistance=currentDriverDistance
                 assignedDriver=driver
-            
+        
         #fare calculate
+        if assignedDriver is None:
+            print(f"No available driver for {passenger.name}")
+            return
         expectedFare:float=self.__calcFare(assignedDriver.vehicle,distance)
+        assignedDriver.status="Assigned"
         
         #show the driver and fare to the passenger
         print(f"Ride booked for {passenger.name} with driver {assignedDriver.name} with fare of Rs.{expectedFare}")
-        print(f"Driver is on the way and is {minDistance}km away")
+        print(f"Driver is on the way and is {minDistance:.2f} km away")

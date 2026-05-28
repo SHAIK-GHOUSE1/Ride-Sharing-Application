@@ -15,3 +15,15 @@ driver1=Driver("Alice",loc2,car)
 driver2=Driver("Bob",loc3,bike)
 
 Passenger1=Passenger("Anirudh",loc1)
+Passenger2=Passenger("Vandana",loc2)
+
+ride_sharing_service=RideSharingServiceApp()
+ride_sharing_service.add_driver(driver1)
+ride_sharing_service.add_driver(driver2)
+ride_sharing_service.add_passenger(Passenger1)
+ride_sharing_service.add_passenger(Passenger2)
+
+ride_sharing_service.bookRide(Passenger1,30)
+ride_sharing_service.bookRide(Passenger2,50)
+ride_sharing_service.bookRide(Passenger2,30)
+

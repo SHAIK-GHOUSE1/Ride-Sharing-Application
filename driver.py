@@ -5,6 +5,7 @@ class Driver:
         self.name=name
         self.location:Location=location
         self.vehicle:Vehicle=vehicle
+        self.status="Available"
     
     def get_location(self)->Location:
         return self.location
