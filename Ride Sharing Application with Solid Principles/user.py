@@ -1,5 +1,5 @@
 from location import Location
-from abc import ABC
+from abc import ABC,abstractmethod
 class User(ABC):
     def __init__(self,name:str,email:str,location:Location):
         self.name=name
@@ -11,4 +11,6 @@ class User(ABC):
     
     def set_location(self,new_location:Location):
         self.location=new_location
-        
+    @abstractmethod  
+    def notify(self):
+        pass

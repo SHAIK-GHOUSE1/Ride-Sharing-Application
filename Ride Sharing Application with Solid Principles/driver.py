@@ -8,3 +8,7 @@ class Driver(User):
     def get_vehicle(self)-> Vehicle:
         return self.__vehicle
     
+    def notify(self,msg:str):
+        print(f"Notify to driver({self.name}) = {msg}")
+        
+        

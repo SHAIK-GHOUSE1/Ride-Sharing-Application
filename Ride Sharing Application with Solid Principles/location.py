@@ -8,7 +8,7 @@ class Location:
     
     def get_longitude(self)->float:
         return self.__longitude
-    def __calcDistance(self,loc:Location):
+    def calcDistance(self,loc:"Location"):
         # Euclidean Distanc
         dx:float=self.get_latitute()-loc.get_latitute()
         dy:float=self.get_longitude()-loc.get_longitude()

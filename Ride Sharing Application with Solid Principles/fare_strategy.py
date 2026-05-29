@@ -20,4 +20,4 @@ class SharedFareStrategy(FareStrategy):
 
 class LuxuryFareStrategy(FareStrategy):
     def calFare(self, vehicle, distance):
-        return vehicle.get_fare_amount * distance * 1.5
+        return vehicle.get_fare_amount() * distance * 1.5
